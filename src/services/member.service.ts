@@ -34,4 +34,15 @@ export class MemberService {
     this.tab = this.tab.filter((item) => item.id != id);
     return new Observable((observer) => observer.next());
   }
+
+  getMemberById(id: String): Observable<Member> {
+    //?? sinon null
+    let member: Member = this.tab.filter((item) => item.id == id)[0] ?? null;
+    return new Observable((observer) => observer.next(member));
+    //ou bien
+    //return new Observable((observer) => observer.next(this.tab.filter((item) => item.id == id)[0] ?? null));
+
+    //avec backend
+    //this.httpClient.get<Member>('127.0.0.1:8080/api/member/$(id)');
+  }
 }

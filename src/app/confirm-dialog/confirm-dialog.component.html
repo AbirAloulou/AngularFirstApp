@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-dialog-content>{{ content }}</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>{{ buttonOne }}</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <!-- [mat-dialog-close]="true" : n5aliha win 7ajty b button eli bech yebaath true as a result -->
+  <button mat-button [mat-dialog-close]="true">{{ buttonTwo }}</button>
+</mat-dialog-actions>

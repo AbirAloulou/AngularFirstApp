@@ -1,0 +1,26 @@
+<h1>Create new Member</h1>
+<form [formGroup]="form" (ngSubmit)="onsub()">
+  <p>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="cin" formControlName="cin" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="name" formControlName="name" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="cv" formControlName="cv" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="type" formControlName="type" />
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" type="submit">submit</button>
+</form>

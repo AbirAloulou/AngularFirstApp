@@ -1,26 +1,32 @@
-<h1>Create new Member</h1>
-<form [formGroup]="form" (ngSubmit)="onsub()">
-  <p>
-    <mat-form-field appearance="fill">
-      <input matInput placeholder="cin" formControlName="cin" />
-    </mat-form-field>
-  </p>
+<mat-card>
+  <mat-card-content> <h1>Create new Member</h1> </mat-card-content>
+  <form [formGroup]="form" (ngSubmit)="onsub()">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>CIN</mat-label>
+        <input matInput formControlName="cin" />
+      </mat-form-field>
+    </p>
 
-  <p>
-    <mat-form-field appearance="fill">
-      <input matInput placeholder="name" formControlName="name" />
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="fill">
-      <input matInput placeholder="cv" formControlName="cv" />
-    </mat-form-field>
-  </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>NAME</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>CV</mat-label>
+        <input matInput formControlName="cv" />
+      </mat-form-field>
+    </p>
 
-  <p>
-    <mat-form-field appearance="fill">
-      <input matInput placeholder="type" formControlName="type" />
-    </mat-form-field>
-  </p>
-  <button mat-raised-button color="primary" type="submit">submit</button>
-</form>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>TYPE</mat-label>
+        <input matInput formControlName="type" />
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary" type="submit">submit</button>
+  </form>
+</mat-card>

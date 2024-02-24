@@ -16,6 +16,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { LayoutComponent } from './layout/layout.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToolComponent } from './tool/tool.component';
+import { ArticleComponent } from './article/article.component';
+import { EventComponent } from './event/event.component';
+import { FirebaseModule } from './Firebase.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +35,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MemberComponent,
     MemberFormComponent,
     ConfirmDialogComponent,
+    LayoutComponent,
+    DashboardComponent,
+    ToolComponent,
+    ArticleComponent,
+    EventComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +56,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatMenuModule,
+    FirebaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

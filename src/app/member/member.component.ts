@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { GLOBAL } from '../app-config';
 import { Member } from 'src/modeles/Member';
 import { MemberService } from '../../services/member.service';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
-import { Dialog } from '@angular/cdk/dialog';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-member',
@@ -26,7 +25,8 @@ export class MemberComponent {
   ];
 
   // dataSource: Member[] = GLOBAL.DB.members;
-  dataSource: Member[] = this.MS.tab;
+  //dataSource: Member[] = this.MS.tab;
+  dataSource = new MatTableDataSource(this.MS.tab);
 
   //Déclaration d'un tableau
   //dataSource = [{}, {}]
@@ -49,6 +49,7 @@ export class MemberComponent {
   // }];
 
   constructor(private MS: MemberService, private dialog: MatDialog) {}
+
   delete(id: string): void {
     //Appel de dialog
     //1 ouvrir la boite
@@ -64,12 +65,20 @@ export class MemberComponent {
         //appeler la fct de service ONDELETE ()
         this.MS.ONDELETE(id).subscribe(() => {
           //on refraiche le table après suppression
-          this.dataSource = this.MS.tab;
+          //si le dataSource n'est pas de type MatTableDataSource
+          // this.dataSource = this.MS.tab;
+
+          //.data => on a accéder au data du dataSource qui est de type MatTableDataSource
+          this.dataSource.data = this.MS.tab;
 
           //avec le backend
         });
     });
-
     //Sinon je fais rien
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
